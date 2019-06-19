@@ -1,0 +1,9 @@
+name: LearningBrain_networks
+dependencies:
+  - numpy = 1.13.3
+  - pandas = 0.20.3
+  - nilearn = 0.4.2
+  - scipy = 0.19.1
+  - matplotlib = 2.1.0
+  - sklearn = 0.19.1
+
