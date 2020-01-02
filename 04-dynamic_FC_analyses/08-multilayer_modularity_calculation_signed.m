@@ -14,6 +14,7 @@ gplus = 1;
 gminus = 1;
 omega = 1;
 n_rep = 100;
+
 %% Empty matrices to store results
 modularity_mean = zeros(n_sub, n_rep, n_ses); % Mean modularity
 modules = zeros(n_sub, n_ses, n_rep, N, T); % Module assigment labels    
