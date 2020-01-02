@@ -14,7 +14,7 @@
 clc; clear;
 
 %% Loading data
-large = load('LB_dual_schaefer_dynamic_correlation_matrices.mat');
+large = load('LB_dualnback_power_dynamic_correlation_matrices.mat');
 M = squeeze(large.correlation_matrices_dyn_wei);
 
 n_sub = size(M,1);
@@ -53,10 +53,10 @@ for sub = 1 : n_sub
         twomu = twomu + 2*omega* n_roi*(n_win-1);
 
         B = B + omega/2*spdiags(ones(n_roi*n_win,2),[-n_roi, n_roi], n_roi*n_win, n_roi*n_win);
-        B = B + omega/2*spdiags(ones(n_roi*n_win,2),[-2*n_roi, 2*n_roi], n_roi*n_win, n_roi*n_win);
+        B = B + omega*spdiags(ones(n_roi*n_win,2),[-2*n_roi, 2*n_roi], n_roi*n_win, n_roi*n_win);
         %B = B + omega * spdiags(ones(n_roi * n_win,2),[-n_roi, n_roi], n_roi*n_win, n_roi*n_win);
 
-        %--- calculate multilayer modules -------------------------------------
+%--- calculate multilayer modules -------------------------------------
         %Qb = 0;
         for rep = 1 : n_rep
             clc;
@@ -67,6 +67,6 @@ for sub = 1 : n_sub
             
             modularity_mean(sub, rep, ses) = Q;
             modules(sub, ses, rep, :, :) = S;
-        end
+       end
     end
 end
