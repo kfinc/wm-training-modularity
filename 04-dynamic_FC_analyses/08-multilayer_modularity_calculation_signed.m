@@ -1,13 +1,14 @@
 clc; clear;
+
 %% Loading data
 large = load('LB_dualnback_power_dynamic_correlation_matrices.mat');
-
 M = squeeze(large.correlation_matrices_dyn_wei);
 
 n_sub = size(M,1);
 n_ses = size(M,2);
 T = size(M,3);
 N = size(M,4);
+
 %% Parameters
 gplus = 1;
 gminus = 1;
