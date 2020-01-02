@@ -43,10 +43,10 @@ for sub = 1 : 1:n_sub
             B(indx,indx)=A{s}-(gplus*kplus*kplus'/sum(kplus)-Gm);
         end
         
-        % Semicategorical 
+
         B = B + omega/2*spdiags(ones(N*T,2),[-N, N], N*T, N*T);
         B = B + omega*spdiags(ones(N*T,2),[-2*N, 2*N], N*T, N*T);
-        %--------------------------
+
         twom=twom+(N*T*(T-1)*omega);
         
         for rep = 1 : n_rep
