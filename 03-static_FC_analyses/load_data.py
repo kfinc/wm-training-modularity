@@ -1,4 +1,3 @@
-from data.subjects_to_exclude import *
 import numpy as np
 import pandas as pd
 
